@@ -91,7 +91,7 @@ This code also adds the NVME drive into the list of devices it obtains the temer
 
 To install, simply execute the following on the node:
 ```
-curl -L https://raw.githubusercontent.com/JeffCurless/argoneon/main/argoneon.sh | bash
+curl -L https://raw.githubusercontent.com/mdelgert/argoneon/main/argoneon.sh | bash
 ```
 
 After intall you may want to modify the fan configuration to match your environment  You can change the default temperature setting by editing the file /etc/argoneon.conf.  The fan will be triggered by one of two separate settings, the CPU temperature, or the HDD temperature.    Which ever component passes the set threashold first will cause the fan to turn on.   For instance, if your HDD temp hits 35C, the fan will turn on at 30%, even if the CPU temp is running below 55C.
