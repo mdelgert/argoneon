@@ -5,7 +5,7 @@ echo " Argon Setup  "
 echo "*************"
 
 # Helper variables
-ARGONDOWNLOADSERVER=https://raw.githubusercontent.com/JeffCurless/argoneon/main/
+ARGONDOWNLOADSERVER=https://raw.githubusercontent.com/mdelgert/argoneon/main/
 INSTALLATIONFOLDER=/etc/argon
 
 versioninfoscript=$INSTALLATIONFOLDER/argon-versioninfo.sh
