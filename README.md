@@ -4,6 +4,7 @@ sudo apt update
 sudo apt upgrade
 sudo nano /etc/timezone
 curl https://raw.githubusercontent.com/mdelgert/argoneon/main/argoneon.sh | bash
+argon-config #2 update RTC 
 ```
 
 # Enable trim
