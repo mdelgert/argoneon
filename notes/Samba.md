@@ -7,6 +7,7 @@ https://pimylifeup.com/raspberry-pi-samba/
 sudo apt-get install samba samba-common-bin
 sudo cp -p /etc/samba/smb.conf /etc/samba/smb.conf.original
 sudo nano /etc/samba/smb.conf
+sudo chown mdelgert:mdelgert /mnt/d2
 sudo smbpasswd -a mdelgert
 sudo systemctl restart smbd
 ```
@@ -26,7 +27,7 @@ sudo systemctl restart smbd
    pam password change = yes
    map to guest = bad user
    usershare allow guests = yes
-   
+
 [d2]
    path = /mnt/d2
    writeable = yes
