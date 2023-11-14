@@ -28,7 +28,33 @@ ACTION=="add|change", ATTRS{idVendor}=="174e", ATTRS{idProduct}=="1155", SUBSYST
 
 # Enable I2C, use raspi-config and change the setting under Interface Options
 
+# Seel all partitions
+```bash
+parted
+print all
+```
+
+# Clear all partions
+```bash
+sudo fdisk /dev/sdb #d 1 enter w
+```
+
+# SSD Setup
+```bash
+lsblk
+sudo fdisk /dev/sdb #n p 1 enter w
+sudo mkfs.ext4 /dev/sdb
+sudo mkdir /mnt/d2
+sudo blkid
+sudo nano /etc/fstab
+sudo reboot
+```
+
+# Example /etc/fstab
+UUID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX /mnt/d2 ext4 defaults 0 0
+
 # Links
+https://thesecmaster.com/how-to-partition-and-format-the-hard-drives-on-raspberry-pi/
 https://github.com/JeffCurless/argoneon
 https://github.com/Argon40Tech/Argon40case
 https://forum.argon40.com/t/installation-and-setup-for-eon-system/455
