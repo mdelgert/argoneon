@@ -12,7 +12,7 @@ sudo smbpasswd -a mdelgert
 sudo systemctl restart smbd
 ```
 
-# Example /etc/samba/smb.conf
+# Example /etc/samba/smb.conf (highlight all clear with ctl k then replace with the following)
 [global]
    workgroup = WORKGROUP
    log file = /var/log/samba/log.%m
@@ -27,6 +27,14 @@ sudo systemctl restart smbd
    pam password change = yes
    map to guest = bad user
    usershare allow guests = yes
+
+[d1]
+   path = /mnt/d1
+   writeable = yes
+   browseable = yes
+   create mask = 0777
+   directory mask = 0777
+   public = no
 
 [d2]
    path = /mnt/d2

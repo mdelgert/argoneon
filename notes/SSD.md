@@ -19,9 +19,11 @@ lsblk
 sudo fdisk /dev/sdb #n p 1 enter w
 sudo mkfs.ext4 /dev/sdb
 sudo mkdir /mnt/d1
+sudo chown mdelgert:mdelgert /mnt/d1
+sudo chown mdelgert:mdelgert /mnt/d2
 sudo blkid
-sudo reboot
 df -h #show all mounts
+sudo nano /etc/fstab
 ```
 
 # Label a disk
@@ -31,13 +33,17 @@ sudo e2label /dev/sdb
 ```
 
 # Example /etc/fstab
-UUID=b957fb13-bfe2-4ead-b9b3-df50d45c8bd2 /mnt/d1 ext4 defaults 0 0
+UUID=60415032-d701-44ac-a26d-741fbbf575b3 /mnt/d1 ext4 defaults 0 0
+UUID=a51316d2-022d-4ff1-9283-2edb53be13e6 /mnt/d2 ext4 defaults 0 0
+
+# Manual mount before reboot
+```bash
+sudo mount -a
+```
 
 # Example blkid
-/dev/sda1: LABEL_FATBOOT="bootfs" LABEL="bootfs" UUID="0B22-2966" BLOCK_SIZE="512" TYPE="vfat" PARTUUID="ad6767fc-01"
-/dev/sda2: LABEL="rootfs" UUID="3ad7386b-e1ae-4032-ae33-0c40f5ecc4ac" BLOCK_SIZE="4096" TYPE="ext4" PARTUUID="ad6767fc-02"
-/dev/sdc: UUID="05aac87c-defe-4df7-bbe7-c35e84fdb6ef" BLOCK_SIZE="4096" TYPE="ext4"
-/dev/sdb: UUID="b957fb13-bfe2-4ead-b9b3-df50d45c8bd2" BLOCK_SIZE="4096" TYPE="ext4"
+/dev/sdb: LABEL="d1" UUID="60415032-d701-44ac-a26d-741fbbf575b3" BLOCK_SIZE="4096" TYPE="ext4"
+/dev/sdc: LABEL="d2" UUID="a51316d2-022d-4ff1-9283-2edb53be13e6" BLOCK_SIZE="4096" TYPE="ext4"
 
 # How to mount Linux file system using WSL on Windows 11
 https://pureinfotech.com/mount-drive-linux-file-system-wsl-windows-11/
