@@ -43,3 +43,11 @@ sudo systemctl restart smbd
    create mask = 0777
    directory mask = 0777
    public = no
+
+[d3]
+   path = /mnt/d3
+   writeable = yes
+   browseable = yes
+   create mask = 0777
+   directory mask = 0777
+   public = no

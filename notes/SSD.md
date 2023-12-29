@@ -35,6 +35,7 @@ sudo e2label /dev/sdb
 # Example /etc/fstab
 UUID=60415032-d701-44ac-a26d-741fbbf575b3 /mnt/d1 ext4 defaults 0 0
 UUID=a51316d2-022d-4ff1-9283-2edb53be13e6 /mnt/d2 ext4 defaults 0 0
+UUID=41c676ad-696c-49c2-aed2-ee598e3da52c /mnt/d3 ext4 defaults 0 0
 
 # Manual mount before reboot
 ```bash
@@ -42,6 +43,7 @@ sudo mount -a
 ```
 
 # Example blkid
+/dev/sda: UUID="41c676ad-696c-49c2-aed2-ee598e3da52c" BLOCK_SIZE="4096" TYPE="ext4"
 /dev/sdb: LABEL="d1" UUID="60415032-d701-44ac-a26d-741fbbf575b3" BLOCK_SIZE="4096" TYPE="ext4"
 /dev/sdc: LABEL="d2" UUID="a51316d2-022d-4ff1-9283-2edb53be13e6" BLOCK_SIZE="4096" TYPE="ext4"
 
